@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Celestora – Astronomy, sky events and the stories of the heavens</title>
+<meta name="description" content="Celestora publishes original articles on astronomy, sky events, space history and the myths people have told about the stars.">
+<link rel="canonical" href="https://www.yourdomain.com/">
+<meta property="og:title" content="Celestora">
+<meta property="og:description" content="Original articles on astronomy, sky events, space history and star stories.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ADSENSE: paste your own code here after approval.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+:root{
+  --bg:#f1f3f9; --ink:#131a3a; --muted:#566086; --card:#ffffff; --line:#d9deee;
+  --night:#0f1533; --night-ink:#eef0fb; --silver:#cfd5ec; --ame:#6d45e0; --gold:#e6c98b; --tint:#e6e9f6;
+  --head:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --body:'Hanken Grotesk','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#090d22; --ink:#eef0fb; --muted:#a5add0; --card:#121945; --line:#27306a;
+    --night:#050818; --night-ink:#eef0fb; --silver:#cfd5ec; --ame:#a58bff; --gold:#e6c98b; --tint:#18205a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#090d22; --ink:#eef0fb; --muted:#a5add0; --card:#121945; --line:#27306a;
+  --night:#050818; --night-ink:#eef0fb; --silver:#cfd5ec; --ame:#a58bff; --gold:#e6c98b; --tint:#18205a;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.03rem;line-height:1.7}
+a{color:var(--ame)}
+a:focus-visible,button:focus-visible,.scroller:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0 0 .45em;font-weight:700;letter-spacing:.005em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+
+/* Split header: nav | logo | nav */
+.mast{border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.mast .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding-top:1rem;padding-bottom:1rem}
+.mast ul{display:flex;gap:1.3rem;list-style:none;margin:0;padding:0;font-weight:500;font-size:.95rem}
+.mast .l{justify-content:flex-start}.mast .r{justify-content:flex-end}
+.mast a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:.2rem 0}
+.mast ul a:hover{border-color:var(--ame)}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--head);font-weight:700;font-size:2.2rem;letter-spacing:.02em}
+.brand svg{width:36px;height:36px}
+
+/* Editorial hero */
+.ed{display:grid;grid-template-columns:1.5fr 1fr;gap:1.6rem;padding:2rem 0 0}
+.main-story{background:var(--night);color:var(--night-ink);border-radius:22px;padding:2.6rem 2.4rem;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.main-story::before{content:"";position:absolute;top:-90px;right:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f1e6 0 40%,#cfd5ec 70%,#8f98c8 100%);box-shadow:0 0 90px 10px rgba(207,213,236,.25)}
+.main-story::after{content:"";position:absolute;top:50px;left:60px;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:90px 40px 0 #fff9,200px -10px 0 #fff7,40px 120px 0 #fff7,150px 150px 0 #fff9,280px 90px 0 #fff6}
+.main-story>*{position:relative;z-index:1}
+.kicker{font-weight:700;font-size:.82rem;color:var(--gold)}
+.main-story h1{font-size:clamp(2.2rem,4.8vw,3.5rem);max-width:15ch}
+.main-story h1 a{color:inherit;text-decoration:none}
+.main-story h1 a:hover{text-decoration:underline}
+.main-story p{color:#c3cae8;max-width:46ch;margin:0 0 1.2rem}
+.btn{display:inline-block;background:var(--gold);color:#241a00;font-weight:700;text-decoration:none;padding:.75rem 1.4rem;border-radius:999px;width:fit-content}
+.btn:hover{filter:brightness(1.05)}
+.side{display:flex;flex-direction:column}
+.side h2{font-size:1.1rem;color:var(--muted);margin-bottom:.2rem}
+.side article{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.side article:last-child{border-bottom:0}
+.side h3{font-size:1.45rem;margin-bottom:.2rem}
+.side h3 a,.item h3 a{color:var(--ink);text-decoration:none}
+.side h3 a:hover,.item h3 a:hover{color:var(--ame);text-decoration:underline}
+.side .cat,.item .cat{font-weight:700;font-size:.78rem;color:var(--ame)}
+.meta{font-size:.82rem;color:var(--muted);margin:0 0 .35rem}
+.side p{margin:0;font-size:.97rem}
+
+/* Moon phase divider */
+.phases{display:flex;justify-content:center;align-items:center;gap:1.1rem;margin:2.6rem 0 0;padding:0}
+.phases svg{width:26px;height:26px}
+.phases .full{fill:var(--silver)} .phases .dark{fill:var(--line)} .phases .edge{stroke:var(--muted);fill:none;stroke-width:1.2}
+
+.sec-title{font-size:1.9rem;margin:1.4rem 0 1rem;text-align:center}
+
+/* Themes scroller */
+.scroller{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.3rem .2rem 1rem}
+.theme{flex:0 0 240px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.3rem}
+.theme .orb{width:46px;height:46px;border-radius:50%;margin-bottom:.8rem}
+.theme:nth-child(1) .orb{background:radial-gradient(circle at 35% 35%,#fff,#9aa6e8)}
+.theme:nth-child(2) .orb{background:radial-gradient(circle at 35% 35%,#fff0c8,#e6c98b)}
+.theme:nth-child(3) .orb{background:radial-gradient(circle at 35% 35%,#e6dcff,#6d45e0)}
+.theme:nth-child(4) .orb{background:radial-gradient(circle at 35% 35%,#d7f2ff,#4aa0d8)}
+.theme:nth-child(5) .orb{background:radial-gradient(circle at 35% 35%,#ffe2e0,#e0786f)}
+.theme h3{font-size:1.4rem;margin-bottom:.2rem}
+.theme p{margin:0;font-size:.93rem;color:var(--muted)}
+
+/* Ads */
+.ad-slot{margin:1.8rem 0;text-align:center}
+.ad-slot small{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.3rem}
+.ad-box{min-height:100px;border:1px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem}
+
+/* Masonry-style archive */
+.archive{columns:3;column-gap:1.4rem}
+.item{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem;margin-bottom:1.4rem}
+.item h3{font-size:1.45rem}
+.item p{margin:.2rem 0 .7rem;font-size:.97rem}
+.more{font-weight:700;font-size:.9rem}
+.item.tint{background:var(--tint)}
+
+/* Centred about + disclaimer */
+.narrow{max-width:760px;margin:0 auto}
+.narrow h2{text-align:center;font-size:1.9rem;margin-top:2.4rem}
+.narrow>p{text-align:center}
+.disclaimer{margin-top:1.4rem;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.9rem;box-shadow:0 0 0 4px var(--tint)}
+.disclaimer h3{font-size:1.2rem;margin:1rem 0 .1rem}
+.disclaimer h3:first-child{margin-top:0}
+.disclaimer p{margin:.1rem 0 .5rem;font-size:.98rem}
+
+/* Footer */
+footer{background:var(--night);color:var(--night-ink);margin-top:3rem;text-align:center;padding:2.4rem 0 2.8rem}
+footer a{color:var(--night-ink)}
+footer .brand{justify-content:center;font-size:1.9rem}
+footer ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem 1.4rem;margin:1rem 0;padding:0;font-size:.95rem;font-weight:500}
+.copy{color:#a5add0;font-size:.88rem}
+
+/* Consent */
+#consent{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.3);display:none;z-index:30;font-size:.95rem;line-height:1.5}
+#consent.show{display:block}
+#consent button{margin-top:.7rem;border:0;cursor:pointer;font-size:.92rem}
+
+@media (max-width:900px){
+  .mast .wrap{grid-template-columns:1fr;justify-items:center;gap:.6rem}
+  .mast ul{flex-wrap:wrap;justify-content:center !important;gap:.3rem 1.1rem}
+  .brand{order:-1}
+  .ed{grid-template-columns:1fr}
+  .main-story{min-height:360px;padding:2rem 1.5rem}
+  .archive{columns:2}
+}
+@media (max-width:600px){.archive{columns:1}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <nav aria-label="Main navigation left"><ul class="l">
+      <li><a href="celestora.html">Home</a></li>
+      <li><a href="#themes">Themes</a></li>
+      <li><a href="#archive">Articles</a></li>
+    </ul></nav>
+    <a class="brand" href="celestora.html" aria-label="Celestora home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M26 5a15 15 0 1 0 9 22A12 12 0 0 1 26 5z" fill="#6d45e0"/><path d="M31 8l1.200 2.600 2.800.4-2 2 .5 2.800L31 14.400l-2.500 1.400.5-2.800-2-2 2.800-.4z" fill="#e6c98b"/></svg>
+      Celestora
+    </a>
+    <nav aria-label="Main navigation right"><ul class="r">
+      <li><a href="#about">About</a></li>
+      <li><a href="#disclaimer">Disclaimer</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="ed" aria-label="Top stories">
+    <article class="main-story">
+      <span class="kicker">Astronomy · Featured</span>
+      <h1><a href="#">The Moon’s phases, explained in one simple picture</a></h1>
+      <p>Why does the Moon change shape every night? The answer is about sunlight and your point of view, not Earth’s shadow. Follow one full cycle and learn to read the sky at a glance.</p>
+      <a class="btn" href="#">Read the feature</a>
+    </article>
+    <div class="side">
+      <h2>More to explore</h2>
+      <article>
+        <span class="cat">Sky events</span>
+        <h3><a href="#">How to watch a meteor shower safely and comfortably</a></h3>
+        <p class="meta">7 min read</p>
+        <p>Find a dark spot, let your eyes adjust and bring something warm to sit on.</p>
+      </article>
+      <article>
+        <span class="cat">Mythology</span>
+        <h3><a href="#">The stories behind five famous constellations</a></h3>
+        <p class="meta">8 min read</p>
+        <p>Ancient cultures saw heroes, animals and tools in the same patterns of stars.</p>
+      </article>
+      <article>
+        <span class="cat">Space history</span>
+        <h3><a href="#">How early astronomers measured the size of the Earth</a></h3>
+        <p class="meta">6 min read</p>
+        <p>With sticks, shadows and clever geometry, they came astonishingly close.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="phases" aria-hidden="true">
+    <svg viewBox="0 0 26 26"><circle class="dark" cx="13" cy="13" r="11"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="dark" cx="13" cy="13" r="11"/><path class="full" d="M13 2a11 11 0 0 1 0 22 6 11 0 0 0 0-22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="dark" cx="13" cy="13" r="11"/><path class="full" d="M13 2a11 11 0 0 1 0 22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="full" cx="13" cy="13" r="11"/><path class="dark" d="M13 2a6 11 0 0 0 0 22 11 11 0 0 1 0-22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="full" cx="13" cy="13" r="11"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="full" cx="13" cy="13" r="11"/><path class="dark" d="M13 2a6 11 0 0 1 0 22 11 11 0 0 0 0-22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="dark" cx="13" cy="13" r="11"/><path class="full" d="M13 2a11 11 0 0 0 0 22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+    <svg viewBox="0 0 26 26"><circle class="dark" cx="13" cy="13" r="11"/><path class="full" d="M13 2a11 11 0 0 0 0 22 6 11 0 0 1 0-22z"/><circle class="edge" cx="13" cy="13" r="11"/></svg>
+  </div>
+
+  <h2 class="sec-title" id="themes">Explore by theme</h2>
+  <div class="scroller" tabindex="0" aria-label="Themes, scroll sideways">
+    <div class="theme"><div class="orb"></div><h3>Stargazing</h3><p>Beginner tips for seeing more of the night sky.</p></div>
+    <div class="theme"><div class="orb"></div><h3>Mythology</h3><p>The stories people have told about the stars.</p></div>
+    <div class="theme"><div class="orb"></div><h3>Deep space</h3><p>Galaxies, nebulae and the scale of the universe.</p></div>
+    <div class="theme"><div class="orb"></div><h3>Our planet</h3><p>Weather, seasons and how Earth fits in the solar system.</p></div>
+    <div class="theme"><div class="orb"></div><h3>Space history</h3><p>Milestones, missions and the people behind them.</p></div>
+  </div>
+
+  <!-- Ad slot 1 -->
+  <div class="ad-slot" aria-label="Advertisement">
+    <small>Advertisement</small>
+    <div class="ad-box">Ad space</div>
+  </div>
+
+  <h2 class="sec-title" id="archive">From the archive</h2>
+  <div class="archive">
+    <article class="item">
+      <span class="cat">Stargazing</span>
+      <h3><a href="#">What you can see with just your eyes tonight</a></h3>
+      <p class="meta">6 min read</p>
+      <p>Bright planets, the Moon’s craters and a handful of easy constellations: a simple checklist before you reach for a telescope.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+    <article class="item tint">
+      <span class="cat">Deep space</span>
+      <h3><a href="#">Is the Milky Way really a spiral?</a></h3>
+      <p class="meta">9 min read</p>
+      <p>We live inside it, so mapping it is like drawing a floor plan from inside one room. Here is how astronomers worked it out and what they still debate.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+    <article class="item">
+      <span class="cat">Our planet</span>
+      <h3><a href="#">Why do we have seasons?</a></h3>
+      <p class="meta">5 min read</p>
+      <p>It is all about tilt, not distance from the Sun.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+    <article class="item">
+      <span class="cat">Mythology</span>
+      <h3><a href="#">Why different cultures see different shapes in the same stars</a></h3>
+      <p class="meta">7 min read</p>
+      <p>The same cluster of stars can be a hunter, a plough or a hen with chicks. We compare traditions from around the world.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+    <article class="item tint">
+      <span class="cat">Space history</span>
+      <h3><a href="#">The first photographs of the Moon</a></h3>
+      <p class="meta">8 min read</p>
+      <p>Long before rockets, patient photographers captured our neighbour through a telescope. Their work changed how we saw it.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+    <article class="item">
+      <span class="cat">Sky events</span>
+      <h3><a href="#">Eclipses: what happens and how to view them safely</a></h3>
+      <p class="meta">8 min read</p>
+      <p>Understand solar and lunar eclipses, and learn which eye protection is safe. Ordinary sunglasses are not.</p>
+      <a class="more" href="#">Continue reading</a>
+    </article>
+  </div>
+
+  <!-- Ad slot 2 -->
+  <div class="ad-slot" aria-label="Advertisement">
+    <small>Advertisement</small>
+    <div class="ad-box">Ad space</div>
+  </div>
+
+  <div class="narrow">
+    <section id="about">
+      <h2>About Celestora</h2>
+      <p>Celestora is an independent blog for anyone who looks up and wonders. Our team writes every article from scratch, checks facts against trusted sources and updates posts when new discoveries are made.</p>
+      <p>We keep our articles free by showing advertising. Ads never influence what we publish. Write to us at <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>.</p>
+    </section>
+
+    <section id="disclaimer">
+      <h2>Disclaimer</h2>
+      <div class="disclaimer" role="note">
+        <h3>General information only</h3>
+        <p>Content on Celestora is provided for general information and education. We work to keep it accurate and current, but we cannot guarantee that it is complete or error-free. Sky event dates and times vary by location, so please confirm them with a local or official source.</p>
+        <h3>Safety</h3>
+        <p>Never look directly at the Sun without certified eye protection, and take sensible precautions when observing at night. Our articles are not professional advice, and you follow any tips at your own risk.</p>
+        <h3>Advertising and cookies</h3>
+        <p>Celestora shows ads served by Google AdSense and possibly other partners, who may use cookies to personalise ads based on your visits to this and other sites. See our <a href="privacy.html">Privacy Policy</a> for details. Ads are not endorsements.</p>
+        <h3>External links</h3>
+        <p>We may link to other websites and are not responsible for their content or privacy practices.</p>
+        <h3>Changes</h3>
+        <p>We may update this disclaimer at any time. Using this site means you accept our <a href="terms.html">Terms and Conditions</a>.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="celestora.html" style="color:var(--night-ink);text-decoration:none">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M26 5a15 15 0 1 0 9 22A12 12 0 0 1 26 5z" fill="#a58bff"/><path d="M31 8l1.200 2.600 2.800.4-2 2 .5 2.800L31 14.400l-2.500 1.400.5-2.800-2-2 2.800-.4z" fill="#e6c98b"/></svg>
+      Celestora
+    </a>
+    <ul>
+      <li><a href="celestora.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#disclaimer">Disclaimer</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms and Conditions</a></li>
+    </ul>
+    <div class="copy">© <span id="yr">2026</span> Celestora. All rights reserved. Contact: <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></div>
+  </div>
+</footer>
+
+<div id="consent" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  We use cookies to run this site and to show ads. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.
+  <br><button class="btn" id="consent-ok" type="button">Got it</button>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var box = document.getElementById('consent'), ok = false;
+  try { ok = localStorage.getItem('celestora-consent') === '1'; } catch(e) {}
+  if(!ok) box.classList.add('show');
+  document.getElementById('consent-ok').addEventListener('click', function(){
+    box.classList.remove('show');
+    try { localStorage.setItem('celestora-consent','1'); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
